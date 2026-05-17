@@ -1,0 +1,45 @@
+# metadata_sample.json - provenance
+
+- **Source file:** `testdata/sample_gyro.mp4` (GoPro "GoPro Hero 10.MP4" official test file; GoPro HERO10 Black, 1920x1080 @ 59.940fps)
+- **Gyroflow version:** Gyroflow v1.6.3 (`/Applications/Gyroflow.app/Contents/MacOS/gyroflow`, non-sandboxed DMG build)
+- **Command:** `gyroflow "<abs>/testdata/sample_gyro.mp4" --export-metadata 2:/tmp/gfmd2.json -f`
+  (`--export-metadata <type>:<path>`, type **2 = parsed metadata** - the form that yields the
+  structured `camera_identifier` block. type 1 = full raw GPMF blob, type 3 = per-frame camera array.)
+- **Date:** 2026-05-17
+- **Trimmed:** bulk telemetry arrays truncated to 2 elements each
+  (`raw_imu`, `quaternions`, `gravity_vectors`, `image_orientations`).
+  All format/camera/lens fields (`camera_identifier`, `detected_source`, `lens_profile`,
+  `frame_rate`, `imu_orientation`, etc.) are **verbatim** - byte-identical values to the
+  real `--export-metadata 2` export. Real export size: 1,707,923 bytes; trimmed: 1,986 bytes.
+
+## Authoritative real source per datum (pinned 2026-05-17, Gyroflow v1.6.3)
+
+| Datum | Authoritative source | Real value |
+|---|---|---|
+| camera make | `--export-metadata 2` → `.camera_identifier.brand` | `"GoPro"` |
+| camera model | `.camera_identifier.model` | `"HERO10 Black"` |
+| detected source | `.detected_source` | `"GoPro HERO10 Black"` |
+| camera identifier | `.camera_identifier.identifier` | `"gopro-hero10black-wide-1920x1080@59940-no-eis"` |
+| lens | `.camera_identifier.lens_info` (only hint); `.camera_identifier.lens_model`=`""`, `.lens_profile`=`null` | `"Wide"` |
+| has_gyro | DERIVED: `.raw_imu` non-empty (real len 4621; each elem has non-null `gyro`). No boolean field exists. | `true` |
+| width | `.camera_identifier.video_width` | `1920` |
+| height | `.camera_identifier.video_height` | `1080` |
+| fps | `.camera_identifier.fps` (milli-fps int; ÷1000). Top-level `.frame_rate` is `null`. | `59940` → 59.940 |
+| duration | NOT a direct field. DERIVED: `.raw_imu[-1].timestamp_ms` ≈ 23100.23 ms (or last `.quaternions` key 23073050 µs). Approx only. | ≈23.1 s |
+| frame_count | NOT a direct metadata field. Exact source is the render `Queue:` line `Frames: 1384`. Reliable metadata proxy: `len(.quaternions)` == `len(.image_orientations)` == `len(.gravity_vectors)` == 1384 (matches Queue line exactly). | `1384` |
+
+> Note: `raw_imu` (4621 IMU samples) is sampled faster than the per-frame
+> quaternions (1384); duration uses the last IMU timestamp, frame_count uses
+> the quaternion count. The 4621-vs-1384 difference is expected, not an
+> inconsistency.
+
+### Render `Queue:` line (from `testdata/stdout_progress_sample.txt`, real bytes)
+
+```
+- [0f271661] file:///.../sample_gyro.mp4 -> /.../sample_gyro_stabilized.mp4, 1920x1080 59.940fps | H.265/HEVC 43 Mbps, Frames: 1384, Status: Rendering
+```
+
+The `Queue:` line carries width, height, fps, codec, bitrate, and **exact frame_count**, but it is
+ONLY emitted during a render with `--stdout-progress` - NOT during `--export-metadata`. For a
+metadata-only probe, width/height/fps come from `.camera_identifier`; frame_count is the
+quaternions-length proxy; duration is derived from the last IMU/quaternion timestamp.

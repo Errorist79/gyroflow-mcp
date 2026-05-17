@@ -1,0 +1,107 @@
+// Command gyroflow-mcp is an MCP server that drives the Gyroflow CLI.
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+	"path/filepath"
+	"time"
+
+	"github.com/Errorist79/gyroflow-mcp/internal/backend/cli"
+	"github.com/Errorist79/gyroflow-mcp/internal/gyroflow"
+	"github.com/Errorist79/gyroflow-mcp/internal/jobengine"
+	"github.com/Errorist79/gyroflow-mcp/internal/lens"
+	"github.com/Errorist79/gyroflow-mcp/internal/mcpsurface"
+	"github.com/modelcontextprotocol/go-sdk/mcp"
+)
+
+// lensSyncTimeout bounds the startup lens-DB download so an unreachable or
+// hanging GitHub can never block server startup. On timeout we degrade to a
+// cached index (if any) or a nil index.
+const lensSyncTimeout = 30 * time.Second
+
+// loadLensIndex tries to sync the gyroflow lens-profile database into a cache
+// directory. It NEVER blocks startup on failure: an offline / failed sync
+// degrades to a nil index, and the lens tool/resources surface an actionable
+// "unavailable" message instead of crashing.
+func loadLensIndex(ctx context.Context) *lens.Index {
+	base, err := os.UserCacheDir()
+	if err != nil {
+		log.Printf("lens: cannot resolve user cache dir: %v - lens features disabled", err)
+		return nil
+	}
+	cacheDir := filepath.Join(base, "gyroflow-mcp", "lens_profiles")
+
+	ctx, cancel := context.WithTimeout(ctx, lensSyncTimeout)
+	defer cancel()
+	idx, err := lens.Sync(ctx, cacheDir)
+	if err != nil {
+		// Offline or download failure: fall back to whatever is already cached.
+		if cached, lerr := lens.LoadFromDir(cacheDir); lerr == nil && cached.Len() > 0 {
+			log.Printf("lens: sync failed (%v) - using %d cached profiles", err, cached.Len())
+			return cached
+		}
+		log.Printf("lens: sync failed and no cache (%v) - lens features return 'unavailable'", err)
+		return nil
+	}
+	return idx
+}
+
+// loadLensIndexFn is a seam so tests can substitute a hermetic, offline lens
+// loader. Production (main()) uses the real loadLensIndex by default.
+var loadLensIndexFn = loadLensIndex
+
+func buildServer() *mcp.Server {
+	srv := mcp.NewServer(
+		&mcp.Implementation{Name: "gyroflow-mcp", Version: "0.1.0"},
+		&mcp.ServerOptions{Instructions: mcpsurface.ServerInstructions()},
+	)
+
+	info, err := gyroflow.Detect(context.Background())
+	if err != nil {
+		log.Printf("gyroflow not detected: %v - running in detect-only mode", err)
+		return srv
+	}
+
+	be := cli.New(info.Path)
+	eng := jobengine.New(be, 1)
+
+	doc := func(ctx context.Context) mcpsurface.DoctorResult {
+		inf, err := gyroflow.Detect(ctx)
+		if err != nil {
+			return mcpsurface.DoctorResult{
+				Found:  false,
+				Usable: false,
+				Advice: "gyroflow not found: " + err.Error(),
+			}
+		}
+		sr, sandboxErr := gyroflow.InspectSandbox(ctx, inf.Path)
+		advice := sr.Advice
+		if sandboxErr != nil {
+			advice = "could not verify code signature (" + sandboxErr.Error() + ") - if this is the App Store build the CLI will fail; prefer the DMG build"
+		}
+		return mcpsurface.DoctorResult{
+			Found:     true,
+			Usable:    sandboxErr == nil && !sr.Sandboxed,
+			Path:      inf.Path,
+			Version:   inf.Version,
+			Sandboxed: sr.Sandboxed,
+			AppStore:  sr.AppStore,
+			Advice:    advice,
+		}
+	}
+	idx := loadLensIndexFn(context.Background())
+	mcpsurface.RegisterTools(srv, eng, doc, idx)
+	mcpsurface.RegisterResources(srv, idx, be)
+	mcpsurface.RegisterPrompts(srv)
+
+	return srv
+}
+
+func main() {
+	srv := buildServer()
+	if err := srv.Run(context.Background(), &mcp.StdioTransport{}); err != nil {
+		log.Fatalf("gyroflow-mcp server failed: %v", err)
+	}
+}

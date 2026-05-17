@@ -1,0 +1,12 @@
+# Test/sample/render media - never committed (multi-MB); see testdata/README.md
+testdata/vids/
+
+# Built binaries
+/gyroflow-mcp
+/bin/
+
+# Internal acceptance runbook - not for version control
+docs/RUNBOOK-acceptance.md
+
+# macOS Finder metadata
+.DS_Store

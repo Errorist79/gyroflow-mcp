@@ -1,0 +1,5 @@
+22:00:24 [DEBUG] (1) gyroflow: [in main] Qt version: 6.7.3
+22:00:24 [DEBUG] (1) gyroflow: Gyroflow 1.6.3
+Gyroflow v1.6.3
+0.34.0 (git 79ef5c4) - Multimedia Development Kit. Copyright (c) 2016-2025 WangBin(QtAV author) <wbsecg1 at gmail.com>
+Build for: macOS110000/26.0.1 25.0.0 16KB ARMv8 AArch64; libc++190102; Apple Clang17.0.0 (clang-1700.0.13.5); 05:52:11 Sep  2 2025. 

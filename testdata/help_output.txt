@@ -1,0 +1,55 @@
+22:27:25 [0m[36m[DEBUG] [0m(1) gyroflow: [in main] Qt version: 6.7.3
+22:27:25 [0m[36m[DEBUG] [0m(1) gyroflow: Gyroflow 1.6.3
+Usage: gyroflow [<input...>] [-f] [-j <parallel-renders>] [-d <when-done>] [-p <out-params>] [-t <suffix>] [-s <sync-params>] [--stdout-progress] [--export-project <export-project>] [--export-metadata <export-metadata>] [--export-metadata-fields <export-metadata-fields>] [--export-stmap <export-stmap>] [--preset <preset>] [--open <open>] [--watch <watch>] [-g <gyro-file>] [-b <processing-device>] [-r <rendering-device>] [--no-gpu-decoding] [--version]
+
+Gyroflow v1.6.3
+Video stabilization using gyroscope data
+
+Positional Arguments:
+  input             input files: videos, project files, lens profiles, presets
+
+Options:
+  -f, --overwrite   overwrite if output file exists, default: false
+  -j, --parallel-renders
+                    number of parallel renders, default: 1
+  -d, --when-done   when done: 1 - shut down; 2 - reboot; 3 - sleep; 4 -
+                    hibernate; 5 - logout
+  -p, --out-params  output parameters, eg. "{{ 'codec': 'H.265/HEVC',
+                    'bitrate': 150, 'use_gpu': true, 'audio': true }}"
+  -t, --suffix      default output suffix, eg. "_stabilized"
+  -s, --sync-params synchronization parameters, eg. "{{ 'search_size': 3,
+                    'processing_resolution': 720 }}"
+  --stdout-progress print progress to stdout in addition to progress bars
+  --export-project  export project file instead of rendering: 1 - default
+                    project, 2 - with gyro data, 3 - with processed gyro data, 4
+                    - video + project file
+  --export-metadata export metadata instead of rendering. <type>:<path>, where
+                    type is 1 - full metadata, 2 - parsed metadata, 3 - camera
+                    data. Eg. "3:camera.json"
+  --export-metadata-fields
+                    fields to include in the exported camera metadata file.
+                    Defaults to all: "{{ 'original': {{ 'gyroscope': true,
+                    'accelerometer': true, 'quaternion': true, 'euler_angles':
+                    true }}, 'stabilized': {{ 'quaternion': true,
+                    'euler_angles': true }}, 'zooming': {{ 'minimal_fovs':
+                    true, 'fovs': true, 'focal_length': true }} }}"
+  --export-stmap    export STmap instead of rendering. <type>:<folder_path>,
+                    where type is 1 - single frame, 2 - all frames. Eg.
+                    "1:C:/stmaps/"
+  --preset          preset (file or content directly), eg. "{{ 'version': 2,
+                    'stabilization': {{ 'fov': 1.5 }} }}"
+  --open            open file in the GUI (video or project)
+  --watch           watch folder for automated processing
+  -g, --gyro-file   gyro file path
+  -b, --processing-device
+                    processing device index. By default it uses the one set in
+                    the GUI
+  -r, --rendering-device
+                    rendering device, specify the GPU type. Eg. "nvidia",
+                    "intel", "amd", "apple m"
+  --no-gpu-decoding don't use gpu video decoding, default: false
+  --version         print app version
+  --help, help      display usage information
+
+0.34.0 (git 79ef5c4) - Multimedia Development Kit. Copyright (c) 2016-2025 WangBin(QtAV author) <wbsecg1 at gmail.com>
+Build for: macOS110000/26.0.1 25.0.0 16KB ARMv8 AArch64; libc++190102; Apple Clang17.0.0 (clang-1700.0.13.5); 05:52:11 Sep  2 2025. 

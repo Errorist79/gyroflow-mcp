@@ -1,0 +1,149 @@
+23:18:57 [0m[36m[DEBUG] [0m(1) gyroflow: [in main] Qt version: 6.4.3
+23:18:57 [0m[36m[DEBUG] [0m(1) gyroflow: Gyroflow 1.6.3
+23:18:57 [0m[34m[INFO] [0mVideos: ["/home/user/Documents/personal-projects/gyro-mcp/testdata/sample_gyro.mp4"]
+23:18:57 [0m[34m[INFO] [0mSettings file path: /home/user/Library/Application Support/Gyroflow/settings.json
+23:18:57 [0m[34m[INFO] [0mLens profiles directory: "/Applications/Gyroflow.app/Contents/Resources/camera_presets"
+23:18:57 [0m[34m[INFO] [0mLoading lens profiles from /home/user/Library/Application Support/Gyroflow/lens_profiles
+23:18:58 [0m[34m[INFO] [0mLoaded 12393 lens profiles in 267.090ms
+23:18:58 [0m[34m[INFO] [0mstart_accessing_url: file:///home/user/Documents/personal-projects/gyro-mcp/testdata/sample_gyro.mp4 - OPEN
+23:18:58 [0m[33m[WARN] [0mIMU duration 23089.721278901736 is different than video duration (23089.733333333334)
+23:18:58 [0m[33m[WARN] [0mIMU duration 23105.2289677559 is different than video duration (23089.721278901736)
+23:18:58 [0m[34m[INFO] [0mNo gravity vectors - using accelerometer
+23:18:58 [0m[34m[INFO] [0mstart_accessing_url: file:///home/user/Documents/personal-projects/gyro-mcp/testdata/ - OPEN
+23:18:58 [0m[34m[INFO] [0mstart_accessing_url: file:///home/user/Documents/personal-projects/gyro-mcp/testdata/sample_gyro_stabilized.mp4 - OPEN
+23:18:58 [0m[34m[INFO] [0m[0f271661] Processing done
+23:18:58 [0m[31m[ERROR] [0m[h264_videotoolbox @ 0xabd8cb100] Error: -constant_bit_rate true is not supported by the encoder.
+23:18:58 [0m[34m[INFO] [0mstart_accessing_url: file:///home/user/Documents/personal-projects/gyro-mcp/testdata/sample_gyro_stabilized.mp4.tmp - OPEN
+23:18:59 [0m[34m[INFO] [0mInitialized OpenCL for (1920, 1080, 1920) -> (1920, 1080, 1920), key: 13858682|opencv_fisheye||8|0|(1920, 1080)|(1920, 1080)|Lanczos4|ThreadId(2)
+23:18:59 [0m[34m[INFO] [0mInitialized OpenCL for (960, 540, 1920) -> (960, 540, 1920), key: 58696070|opencv_fisheye||8|96|(1920, 1080)|(1920, 1080)|Lanczos4|ThreadId(2)
+23:19:00 [0m[34m[INFO] [0mQueue:
+23:19:00 [0m[34m[INFO] [0m- [0f271661] file:///home/user/Documents/personal-projects/gyro-mcp/testdata/sample_gyro.mp4 -> /home/user/Documents/personal-projects/gyro-mcp/testdata/sample_gyro_stabilized.mp4, 1920x1080 59.940fps | H.265/HEVC 43 Mbps, Frames: 1384, Status: Rendering 
+[0f271661] Rendering progress: 1/1384 frames (0.1%) ETA 2347.0s
+[0f271661] Rendering progress: 2/1384 frames (0.1%) ETA 2300.1s
+[0f271661] Rendering progress: 3/1384 frames (0.2%) ETA 2224.4s
+[0f271661] Rendering progress: 4/1384 frames (0.3%) ETA 2150.8s
+[0f271661] Rendering progress: 5/1384 frames (0.4%) ETA 2032.6s
+[0f271661] Rendering progress: 6/1384 frames (0.4%) ETA 1914.2s
+[0f271661] Rendering progress: 7/1384 frames (0.5%) ETA 1795.3s
+[0f271661] Rendering progress: 8/1384 frames (0.6%) ETA 1674.0s
+[0f271661] Rendering progress: 9/1384 frames (0.7%) ETA 1554.5s
+[0f271661] Rendering progress: 10/1384 frames (0.7%) ETA 1439.9s
+[0f271661] Rendering progress: 11/1384 frames (0.8%) ETA 1356.7s
+[0f271661] Rendering progress: 12/1384 frames (0.9%) ETA 1268.4s
+[0f271661] Rendering progress: 13/1384 frames (0.9%) ETA 1189.4s
+[0f271661] Rendering progress: 14/1384 frames (1.0%) ETA 1113.5s
+[0f271661] Rendering progress: 15/1384 frames (1.1%) ETA 1025.0s
+[0f271661] Rendering progress: 16/1384 frames (1.2%) ETA 963.5s
+[0f271661] Rendering progress: 17/1384 frames (1.2%) ETA 898.7s
+[0f271661] Rendering progress: 18/1384 frames (1.3%) ETA 835.1s
+[0f271661] Rendering progress: 19/1384 frames (1.4%) ETA 789.3s
+[0f271661] Rendering progress: 20/1384 frames (1.4%) ETA 723.1s
+[0f271661] Rendering progress: 21/1384 frames (1.5%) ETA 676.4s
+[0f271661] Rendering progress: 22/1384 frames (1.6%) ETA 631.0s
+[0f271661] Rendering progress: 23/1384 frames (1.7%) ETA 597.5s
+[0f271661] Rendering progress: 24/1384 frames (1.7%) ETA 575.3s
+[0f271661] Rendering progress: 25/1384 frames (1.8%) ETA 553.5s
+[0f271661] Rendering progress: 26/1384 frames (1.9%) ETA 534.5s
+[0f271661] Rendering progress: 27/1384 frames (2.0%) ETA 514.6s
+[0f271661] Rendering progress: 28/1384 frames (2.0%) ETA 497.3s
+[0f271661] Rendering progress: 29/1384 frames (2.1%) ETA 480.0s
+[0f271661] Rendering progress: 30/1384 frames (2.2%) ETA 463.4s
+[0f271661] Rendering progress: 31/1384 frames (2.2%) ETA 446.9s
+[0f271661] Rendering progress: 32/1384 frames (2.3%) ETA 430.6s
+[0f271661] Rendering progress: 33/1384 frames (2.4%) ETA 415.6s
+[0f271661] Rendering progress: 34/1384 frames (2.5%) ETA 402.5s
+[0f271661] Rendering progress: 35/1384 frames (2.5%) ETA 389.7s
+[0f271661] Rendering progress: 36/1384 frames (2.6%) ETA 376.7s
+[0f271661] Rendering progress: 37/1384 frames (2.7%) ETA 365.2s
+[0f271661] Rendering progress: 38/1384 frames (2.7%) ETA 353.9s
+[0f271661] Rendering progress: 39/1384 frames (2.8%) ETA 343.2s
+[0f271661] Rendering progress: 40/1384 frames (2.9%) ETA 332.9s
+[0f271661] Rendering progress: 41/1384 frames (3.0%) ETA 320.9s
+[0f271661] Rendering progress: 42/1384 frames (3.0%) ETA 314.2s
+[0f271661] Rendering progress: 43/1384 frames (3.1%) ETA 303.4s
+[0f271661] Rendering progress: 44/1384 frames (3.2%) ETA 297.2s
+[0f271661] Rendering progress: 45/1384 frames (3.3%) ETA 289.4s
+[0f271661] Rendering progress: 46/1384 frames (3.3%) ETA 281.5s
+[0f271661] Rendering progress: 47/1384 frames (3.4%) ETA 274.4s
+[0f271661] Rendering progress: 48/1384 frames (3.5%) ETA 267.6s
+[0f271661] Rendering progress: 49/1384 frames (3.5%) ETA 260.7s
+[0f271661] Rendering progress: 50/1384 frames (3.6%) ETA 253.9s
+[0f271661] Rendering progress: 51/1384 frames (3.7%) ETA 248.2s
+[0f271661] Rendering progress: 52/1384 frames (3.8%) ETA 242.7s
+[0f271661] Rendering progress: 53/1384 frames (3.8%) ETA 236.6s
+[0f271661] Rendering progress: 54/1384 frames (3.9%) ETA 230.5s
+[0f271661] Rendering progress: 55/1384 frames (4.0%) ETA 223.8s
+[0f271661] Rendering progress: 56/1384 frames (4.0%) ETA 219.2s
+[0f271661] Rendering progress: 57/1384 frames (4.1%) ETA 213.3s
+[0f271661] Rendering progress: 58/1384 frames (4.2%) ETA 208.1s
+[0f271661] Rendering progress: 59/1384 frames (4.3%) ETA 203.6s
+[0f271661] Rendering progress: 60/1384 frames (4.3%) ETA 199.4s
+[0f271661] Rendering progress: 61/1384 frames (4.4%) ETA 194.5s
+[0f271661] Rendering progress: 62/1384 frames (4.5%) ETA 191.1s
+[0f271661] Rendering progress: 63/1384 frames (4.6%) ETA 186.6s
+[0f271661] Rendering progress: 64/1384 frames (4.6%) ETA 182.9s
+[0f271661] Rendering progress: 65/1384 frames (4.7%) ETA 178.8s
+[0f271661] Rendering progress: 66/1384 frames (4.8%) ETA 175.1s
+[0f271661] Rendering progress: 67/1384 frames (4.8%) ETA 171.3s
+[0f271661] Rendering progress: 68/1384 frames (4.9%) ETA 167.6s
+[0f271661] Rendering progress: 69/1384 frames (5.0%) ETA 164.1s
+[0f271661] Rendering progress: 70/1384 frames (5.1%) ETA 160.4s
+[0f271661] Rendering progress: 71/1384 frames (5.1%) ETA 157.1s
+[0f271661] Rendering progress: 72/1384 frames (5.2%) ETA 153.6s
+[0f271661] Rendering progress: 73/1384 frames (5.3%) ETA 149.6s
+[0f271661] Rendering progress: 74/1384 frames (5.3%) ETA 146.7s
+[0f271661] Rendering progress: 75/1384 frames (5.4%) ETA 144.1s
+[0f271661] Rendering progress: 76/1384 frames (5.5%) ETA 141.0s
+[0f271661] Rendering progress: 77/1384 frames (5.6%) ETA 138.1s
+[0f271661] Rendering progress: 78/1384 frames (5.6%) ETA 134.8s
+[0f271661] Rendering progress: 79/1384 frames (5.7%) ETA 131.2s
+[0f271661] Rendering progress: 80/1384 frames (5.8%) ETA 127.8s
+[0f271661] Rendering progress: 81/1384 frames (5.9%) ETA 125.4s
+[0f271661] Rendering progress: 82/1384 frames (5.9%) ETA 123.5s
+[0f271661] Rendering progress: 83/1384 frames (6.0%) ETA 121.5s
+[0f271661] Rendering progress: 84/1384 frames (6.1%) ETA 119.1s
+[0f271661] Rendering progress: 85/1384 frames (6.1%) ETA 117.3s
+[0f271661] Rendering progress: 86/1384 frames (6.2%) ETA 115.0s
+[0f271661] Rendering progress: 87/1384 frames (6.3%) ETA 112.5s
+[0f271661] Rendering progress: 88/1384 frames (6.4%) ETA 111.2s
+[0f271661] Rendering progress: 89/1384 frames (6.4%) ETA 109.4s
+[0f271661] Rendering progress: 90/1384 frames (6.5%) ETA 108.0s
+[0f271661] Rendering progress: 91/1384 frames (6.6%) ETA 106.2s
+[0f271661] Rendering progress: 92/1384 frames (6.6%) ETA 104.9s
+[0f271661] Rendering progress: 93/1384 frames (6.7%) ETA 103.8s
+[0f271661] Rendering progress: 94/1384 frames (6.8%) ETA 102.7s
+[0f271661] Rendering progress: 95/1384 frames (6.9%) ETA 101.7s
+[0f271661] Rendering progress: 96/1384 frames (6.9%) ETA 100.7s
+[0f271661] Rendering progress: 97/1384 frames (7.0%) ETA 99.7s
+[0f271661] Rendering progress: 98/1384 frames (7.1%) ETA 98.7s
+[0f271661] Rendering progress: 99/1384 frames (7.2%) ETA 97.7s
+[0f271661] Rendering progress: 100/1384 frames (7.2%) ETA 96.6s
+[0f271661] Rendering progress: 101/1384 frames (7.3%) ETA 95.7s
+[0f271661] Rendering progress: 102/1384 frames (7.4%) ETA 94.8s
+[0f271661] Rendering progress: 103/1384 frames (7.4%) ETA 93.9s
+[0f271661] Rendering progress: 104/1384 frames (7.5%) ETA 93.2s
+[0f271661] Rendering progress: 105/1384 frames (7.6%) ETA 92.5s
+[0f271661] Rendering progress: 106/1384 frames (7.7%) ETA 91.7s
+[0f271661] Rendering progress: 107/1384 frames (7.7%) ETA 91.1s
+[0f271661] Rendering progress: 108/1384 frames (7.8%) ETA 90.5s
+[0f271661] Rendering progress: 109/1384 frames (7.9%) ETA 89.5s
+[0f271661] Rendering progress: 110/1384 frames (7.9%) ETA 88.6s
+[0f271661] Rendering progress: 111/1384 frames (8.0%) ETA 87.8s
+[0f271661] Rendering progress: 112/1384 frames (8.1%) ETA 87.1s
+[0f271661] Rendering progress: 113/1384 frames (8.2%) ETA 86.4s
+[0f271661] Rendering progress: 114/1384 frames (8.2%) ETA 85.9s
+[0f271661] Rendering progress: 115/1384 frames (8.3%) ETA 85.2s
+[0f271661] Rendering progress: 116/1384 frames (8.4%) ETA 84.7s
+[0f271661] Rendering progress: 117/1384 frames (8.5%) ETA 83.8s
+[0f271661] Rendering progress: 118/1384 frames (8.5%) ETA 83.1s
+[0f271661] Rendering progress: 119/1384 frames (8.6%) ETA 82.5s
+[0f271661] Rendering progress: 120/1384 frames (8.7%) ETA 81.7s
+[0f271661] Rendering progress: 121/1384 frames (8.7%) ETA 81.0s
+[0f271661] Rendering progress: 122/1384 frames (8.8%) ETA 80.3s
+[0f271661] Rendering progress: 123/1384 frames (8.9%) ETA 79.7s
+[0f271661] Rendering progress: 124/1384 frames (9.0%) ETA 79.1s
+[0f271661] Rendering progress: 125/1384 frames (9.0%) ETA 78.4s
+[0f271661] Rendering progress: 126/1384 frames (9.1%) ETA 77.8s
+[0f271661] Rendering progress: 127/1384 frames (9.2%) ETA 77.1s
+[0f271661] Rendering progress: 128/1384 frames (9.2%) ETA 76.5s
+[0f271661] Rendering progress: 129/1384 frames (9.3%) ETA 75.9s

@@ -1,0 +1,99 @@
+{
+  "imu_orientation": "XYZ",
+  "raw_imu": [
+    {
+      "timestamp_ms": 0.0,
+      "gyro": [
+        -7.322144346719785,
+        -1.2813752606759625,
+        8.481483868283751
+      ],
+      "accl": [
+        9.755395683453237,
+        0.011990407673860911,
+        2.5227817745803356
+      ],
+      "magn": null
+    },
+    {
+      "timestamp_ms": 5.0,
+      "gyro": [
+        -5.674661868707834,
+        0.7932323042279767,
+        8.90860895517574
+      ],
+      "accl": [
+        9.839328537170264,
+        0.016786570743405275,
+        2.827338129496403
+      ],
+      "magn": null
+    }
+  ],
+  "quaternions": {
+    "0": [
+      0.0009766181267200093,
+      -0.0022279101015800214,
+      0.0014954465065400142,
+      0.9999959231283695
+    ],
+    "16683": [
+      0.0007019422687735296,
+      -0.0019227114318579289,
+      0.003112961365865218,
+      0.9999930599405856
+    ]
+  },
+  "gravity_vectors": {
+    "0": [
+      -0.02557451094088565,
+      0.9552903836176642,
+      0.2945341349528489
+    ],
+    "16683": [
+      -0.028260139774773402,
+      0.9551072725608082,
+      0.2948698385570849
+    ]
+  },
+  "image_orientations": {
+    "0": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "16683": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "detected_source": "GoPro HERO10 Black",
+  "frame_readout_time": null,
+  "frame_readout_direction": "TopToBottom",
+  "frame_rate": null,
+  "camera_identifier": {
+    "brand": "GoPro",
+    "model": "HERO10 Black",
+    "lens_model": "",
+    "lens_info": "Wide",
+    "focal_length": null,
+    "camera_setting": "",
+    "fps": 59940,
+    "video_width": 1920,
+    "video_height": 1080,
+    "additional": "NO-EIS",
+    "identifier": "gopro-hero10black-wide-1920x1080@59940-no-eis"
+  },
+  "lens_profile": null,
+  "lens_positions": {},
+  "lens_params": {},
+  "digital_zoom": null,
+  "has_accurate_timestamps": true,
+  "additional_data": {},
+  "per_frame_time_offsets": [],
+  "camera_stab_data": [],
+  "mesh_correction": []
+}
