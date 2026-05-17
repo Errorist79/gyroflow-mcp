@@ -5,6 +5,10 @@ An [MCP](https://modelcontextprotocol.io) server that wraps the
 inspect footage metadata, and look up lens profiles - through MCP tools,
 resources, and prompts.
 
+## Project status
+
+This is an experimental hobby project. I built it while learning Gyroflow for my own drone footage, so some options or assumptions may be incomplete or wrong.
+
 It ships as a **single self-contained Go binary**: no virtualenv, no Node, no
 runtime dependencies, and no flags or environment variables. The server speaks
 MCP over stdio and is configured purely by your MCP client's config file (a
